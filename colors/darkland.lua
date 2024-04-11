@@ -18,11 +18,6 @@ local opts = {
   },
 }
 
-local colors = {
-
-  cyan = "#22A39F", -- purpble / blue
-}
-
 local c = {
   none = "NONE",
   bg = "#100F0F",
@@ -32,11 +27,12 @@ local c = {
   cursor_fg = "#151515",
   cursor_bg = "#D0D0D0",
 
+  -- gray
   gray = "#474747",
   dark_gray = "#313131",
-  -- gray
   medium_gray = "#727272",
   light_gray = "#AFAFAF",
+
   -- blue
   cyan = "#22A39F",
   green = "#16a34a",
