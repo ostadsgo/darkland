@@ -40,6 +40,7 @@ local c = {
   light_green = "#90A959",
   red = "#C84B31",
   orange = "#BC5215",
+  white = "#d6d6d6",
 
   -- less used just accent
   dark_red = "#DA0037",
@@ -112,7 +113,7 @@ local theme = {
   PmenuSbar = { bg = c.alt_bg },
   PmenuThumb = { bg = c.light_gray },
   MatchWord = { underline = true },
-  MatchParen = vim.tbl_extend("force", { fg = c.blue, bg = c.bg, underline = true }, opts.styles.match_paren),
+  MatchParen = vim.tbl_extend("force", { fg = c.light_gray, bg = c.bg, underline = true }, opts.styles.match_paren),
   MatchWordCur = { underline = true },
   MatchParenCur = { underline = true },
   Cursor = { fg = c.cursor_fg, bg = c.cursor_bg },
@@ -200,7 +201,7 @@ local theme = {
   ["@constructor"] = { fg = c.medium_gray },
   ["@error"] = { fg = c.error },
   ["@function"] = vim.tbl_extend("force", { fg = c.fg }, opts.styles.functions),
-  ["@function.builtin"] = { fg = c.fg },
+  ["@function.builtin"] = { fg = c.white },
   ["@function.macro"] = { fg = c.fg },
   ["@function.method"] = { fg = c.fg },
   ["@function.method.call"] = { fg = c.fg },
