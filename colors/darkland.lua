@@ -18,29 +18,36 @@ local opts = {
   },
 }
 
+local color = {
+  primary = "",
+  secondary = "",
+  warning = "",
+  only = "",
+  gray = "",
+  black = "",
+  white = ""
+}
+
 local c = {
   none = "NONE",
-  bg = "#100F0F",
-  fg = "#d6d6d6",
+  bg = "#000000",
+  fg = "#c2c2c2",
   alt_bg = "#171717",
   accent = "#202020",
   cursor_fg = "#151515",
   cursor_bg = "#D0D0D0",
-
   -- gray
-  gray = "#474747",
-  dark_gray = "#313131",
-  medium_gray = "#727272",
+  gray = "#676F79",
+  dark_gray = "#313131", -- visual : only
+  medium_gray = "#707070",
   light_gray = "#AFAFAF",
-
-  -- blue
-  cyan = "#22A39F",
-  green = "#16a34a",
+  cyan = "#008170",
+  green = "#8a9a7b",
   blue = "#146C94",
   light_green = "#90A959",
-  red = "#C84B31",
+  red = "#B6927B",
   orange = "#BC5215",
-  white = "#d6d6d6",
+  white = "#d8d8d8",
 
   -- less used just accent
   dark_red = "#DA0037",
@@ -87,7 +94,7 @@ local theme = {
   Comment = vim.tbl_extend("force", { fg = c.gray }, opts.styles.comments),
   Folded = { fg = c.light_gray, bg = c.alt_bg },
   FoldColumn = { fg = c.light_gray, bg = c.alt_bg },
-  LineNr = { fg = c.gray },
+  LineNr = { fg = c.medium_gray },
   Whitespace = { fg = c.gray },
   VertSplit = { fg = c.bg, bg = c.accent },
   CursorLine = {
@@ -113,7 +120,7 @@ local theme = {
   PmenuSbar = { bg = c.alt_bg },
   PmenuThumb = { bg = c.light_gray },
   MatchWord = { underline = true },
-  MatchParen = vim.tbl_extend("force", { fg = c.light_gray, bg = c.bg, underline = true }, opts.styles.match_paren),
+  MatchParen = vim.tbl_extend("force", { fg = c.light_gray, bg = c.alt_bg, underline = true }, opts.styles.match_paren),
   MatchWordCur = { underline = true },
   MatchParenCur = { underline = true },
   Cursor = { fg = c.cursor_fg, bg = c.cursor_bg },
@@ -131,7 +138,7 @@ local theme = {
   Conceal = { fg = c.fg },
   Directory = { fg = c.blue },
   SpecialKey = { fg = c.blue },
-  Title = { fg = c.blue },
+  Title = { fg = c.white},
   ErrorMsg = { fg = c.error, bg = c.bg, bold = true },
   Search = { fg = c.orange, bg = c.alt_bg },
   IncSearch = { fg = c.alt_bg, bg = c.orange },
@@ -150,7 +157,7 @@ local theme = {
   Identifier = { fg = c.white },
   Function = vim.tbl_extend("force", { fg = c.fg }, opts.styles.functions),
   Operator = { fg = c.white },
-  Type = vim.tbl_extend("force", { fg = c.white }, opts.styles.type),
+  Type = vim.tbl_extend("force", { fg = c.cyan }, opts.styles.type),
   StorageClass = { fg = c.cyan },
   Structure = { fg = c.cyan },
   Typedef = { fg = c.white },
@@ -171,7 +178,7 @@ local theme = {
   Debug = { fg = c.red },
   Delimiter = { fg = c.white },
   SpecialComment = vim.tbl_extend("force", { fg = c.medium_gray }, opts.styles.comments),
-  Underlined = { underline = true },
+  Underlined = { underline = false },
   Bold = { bold = true },
   Italic = { italic = true },
   Ignore = { fg = c.fg, bg = c.bg, bold = true },
@@ -182,6 +189,7 @@ local theme = {
   TabLineFill = { fg = c.white, bg = c.alt_bg },
   WinSeparator = { fg = c.medium_gray, bg = c.bg },
   DiagnosticFloatingError = { fg = c.error },
+  DiagnosticUnnecessary  = { fg=c.gray },
   FloatBorder = { fg = c.light_gray },
 
   -- Treesitter
@@ -198,10 +206,10 @@ local theme = {
   ["@const.builtin"] = { fg = c.red },
   ["@const.macro"] = { fg = c.fg },
   ["@constant"] = { fg = c.white },
-  ["@constructor"] = { fg = c.medium_gray },
+  ["@constructor"] = { fg = c.fg },
   ["@error"] = { fg = c.error },
   ["@function"] = vim.tbl_extend("force", { fg = c.fg }, opts.styles.functions),
-  ["@function.builtin"] = { fg = c.white },
+  ["@function.builtin"] = { fg = c.cyan },
   ["@function.macro"] = { fg = c.fg },
   ["@function.method"] = { fg = c.fg },
   ["@function.method.call"] = { fg = c.fg },
@@ -239,12 +247,14 @@ local theme = {
   ["@tag.attribute"] = { fg = c.white },
   ["@tag.delimiter"] = { fg = c.medium_gray },
   ["@type"] = vim.tbl_extend("force", { fg = c.white }, opts.styles.type),
-  ["@type.builtin"] = { fg = c.white },
+  ["@type.builtin"] = { fg = c.medium_gray },
   ["@variable"] = vim.tbl_extend("force", { fg = c.white }, opts.styles.variables),
   ["@variable.builtin"] = { fg = c.white },
   ["@variable.field"] = { fg = c.white },
   ["@variable.parameter"] = { fg = c.white },
   ["@variable.parameter.reference"] = { fg = c.white },
+  -- Python
+  ["@constant.builtin.python"] = {fg = c.orange},
 
   -- Telescop
   TelescopeNormal = {
@@ -310,6 +320,12 @@ local theme = {
   LazyTaskOutput = { fg = c.medium_gray },
   LazyUrl = { fg = c.cyan },
   LazyValue = { fg = c.green },
+
+  -- VIM Visual Multi 
+   VM_Insert = { bg = c.cyan },
+   VM_Extend = { bg = c.gray },
+   VM_Cursor = { bg = c.blue },
+   VM_Mono = { bg = c.red },
 }
 
 for group, hl in pairs(theme) do
