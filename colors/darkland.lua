@@ -43,10 +43,10 @@ local c = {
   light_gray = "#AFAFAF",
   cyan = "#008170",
   green = "#8a9a7b",
-  blue = "#146C94",
+  blue = "#8992a7",
   light_green = "#90A959",
   red = "#B6927B",
-  orange = "#BC5215",
+ orange = "#BC5215",
   white = "#d8d8d8",
 
   -- less used just accent
@@ -247,14 +247,13 @@ local theme = {
   ["@tag.attribute"] = { fg = c.white },
   ["@tag.delimiter"] = { fg = c.medium_gray },
   ["@type"] = vim.tbl_extend("force", { fg = c.white }, opts.styles.type),
-  ["@type.builtin"] = { fg = c.medium_gray },
+  ["@type.builtin"] = { fg = c.cyan },
   ["@variable"] = vim.tbl_extend("force", { fg = c.white }, opts.styles.variables),
   ["@variable.builtin"] = { fg = c.white },
   ["@variable.field"] = { fg = c.white },
   ["@variable.parameter"] = { fg = c.white },
   ["@variable.parameter.reference"] = { fg = c.white },
   -- Python
-  ["@constant.builtin.python"] = {fg = c.orange},
 
   -- Telescop
   TelescopeNormal = {
