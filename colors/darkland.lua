@@ -172,7 +172,7 @@ local theme = {
   Define = { fg = c.red },
   Macro = { fg = c.fg },
   PreCondit = { fg = c.medium_gray },
-  Special = { fg = c.white },
+  Special = { fg = c.red },
   SpecialChar = { fg = c.green },
   Tag = { fg = c.cyan },
   Debug = { fg = c.red },
