@@ -27,7 +27,7 @@ local c = {
   cursor_fg = "#151515",
   cursor_bg = "#D0D0D0",
   -- gray
-  gray = "#707070",
+  gray = "#707070", -- comment
   dark_gray = "#313131", -- visual : only
   light_gray = "#AFAFAF",
   blue = "#708090", -- keyword / main color
@@ -77,6 +77,7 @@ local theme = {
     fg = c.light_gray,
     bold = true,
   },
+  StatusLine = { fg = c.fg, bg = c.alt_bg },
   Comment = vim.tbl_extend("force", { fg = c.gray }, opts.styles.comments),
   Folded = { fg = c.light_gray, bg = c.alt_bg },
   FoldColumn = { fg = c.light_gray, bg = c.alt_bg },
@@ -141,7 +142,7 @@ local theme = {
   Boolean = { fg = c.red },
   Float = { fg = c.red },
   Identifier = { fg = c.fg },
-  Function = vim.tbl_extend("force", { fg = c.fg }, opts.styles.functions),
+  Function = vim.tbl_extend("force", { fg = c.cyan }, opts.styles.functions),
   Operator = { fg = c.fg },
   Type = vim.tbl_extend("force", { fg = c.blue }, opts.styles.type),
   StorageClass = { fg = c.blue },
